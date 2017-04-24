@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assessment_id: 1
+  student_id: 1
+  class_id: MyString
+  package_id: MyString
+  payment_id: 1
+  period_id: 1
+  announcement: MyText
+
+two:
+  assessment_id: 1
+  student_id: 1
+  class_id: MyString
+  package_id: MyString
+  payment_id: 1
+  period_id: 1
+  announcement: MyText

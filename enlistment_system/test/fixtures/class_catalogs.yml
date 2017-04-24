@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  class_id: MyString
+  venue_address: MyString
+  time_start: 2017-04-21 17:03:32
+  time_end: 2017-04-21 17:03:32
+  date_inclusive: 2017-04-21
+  subject_list: MyString
+
+two:
+  class_id: MyString
+  venue_address: MyString
+  time_start: 2017-04-21 17:03:32
+  time_end: 2017-04-21 17:03:32
+  date_inclusive: 2017-04-21
+  subject_list: MyString
