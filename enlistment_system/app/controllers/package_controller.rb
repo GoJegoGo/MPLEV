@@ -1,0 +1,3 @@
+class PackageController < ApplicationController
+
+end
