@@ -1,4 +1,4 @@
-class StudentController < ApplicationController
+class StudentsController < ApplicationController
     def index
         @students = Student.all
         render "students/index.html.erb"
@@ -15,9 +15,9 @@ class StudentController < ApplicationController
     end
 
     def create
-        @student = Student.new(post_params)
+        @student = Student.new(student_params)
         if @student.save
-            redirect_to post_path(@student.id)
+            redirect_to student_path(@student.id)
         else
             render "students/new.html.erb"
         end
@@ -30,8 +30,8 @@ class StudentController < ApplicationController
 
     def update
         @student = Student.find(params[:id])
-        if @student.update(post_params)
-            redirect_to post_path(@student.id)
+        if @student.update(student_params)
+            redirect_to student_path(@student.id)
         else
             render "students/edit.html.erb"
         end
@@ -39,6 +39,12 @@ class StudentController < ApplicationController
 
     def destroy
         @student = Student.find(params[:id])
-        @post
+        @student.destroy!
+        redirect_to students_path
+    end
+
+    def student_params
+        params_require(:student).permit!
+    end
 
 end
