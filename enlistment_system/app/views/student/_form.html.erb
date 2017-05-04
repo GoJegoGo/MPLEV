@@ -1,0 +1,11 @@
+<%= simple_form_for(@student) do |f| %>
+  <%= f.association :position %>
+  <%= f.input :name %>
+  <%= f.input :email_ad %>
+  <%= f.input :high_school %>
+  <%= f.input :birthdate %>
+  <%= f.input :contact_number %>
+  <%= f.input :father_name %>
+  <%= f.input :mother_name %>
+  <%= f.submit %>
+<% end %>
