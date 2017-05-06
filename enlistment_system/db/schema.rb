@@ -12,19 +12,19 @@
 
 ActiveRecord::Schema.define(version: 20170421090340) do
 
-  create_table "assessments", force: :cascade do |t|
+  create_table "assessments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "assessment_id"
     t.integer  "student_id"
     t.string   "class_id"
     t.string   "package_id"
     t.integer  "payment_id"
     t.integer  "period_id"
-    t.text     "announcement"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.text     "announcement",  limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
-  create_table "class_catalogs", force: :cascade do |t|
+  create_table "class_catalogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "class_id"
     t.string   "venue_address"
     t.time     "time_start"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170421090340) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "class_lists", force: :cascade do |t|
+  create_table "class_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "class_id"
     t.integer  "student_id"
     t.integer  "period_id"
@@ -44,16 +44,16 @@ ActiveRecord::Schema.define(version: 20170421090340) do
     t.datetime "updated_at",     null: false
   end
 
-  create_table "packages", force: :cascade do |t|
+  create_table "packages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "package_id"
     t.string   "name"
     t.string   "package_type"
-    t.decimal  "initial_price"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.decimal  "initial_price", precision: 10
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
-  create_table "students", force: :cascade do |t|
+  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "student_id"
     t.string   "name"
     t.string   "email_ad"
