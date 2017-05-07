@@ -1,4 +1,4 @@
-class PackageController < ApplicationController
+class PackagesController < ApplicationController
     def index
         @packages = Package.all
         render "packages/index.html.erb"

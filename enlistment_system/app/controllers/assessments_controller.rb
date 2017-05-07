@@ -1,8 +1,8 @@
-class AssessmentController < ApplicationController
+class AssessmentsController < ApplicationController
 
     def index 
         @assessments = Assessment.all
-        render "/assessment/index.html.erb"
+        render "/assessments/index.html.erb"
     end
 
     def show
