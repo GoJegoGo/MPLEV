@@ -1,8 +1,9 @@
-<%= simple_form_for(@candidate) do |f| %>
-  <%= f.association :position %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :nickname %>
-  <%= f.input :slogan %>
-  <%= f.submit %>
+<%= simple_form_for(@class_catalog) do |f| %>
+  <%= f.input :class_id %>
+  <%= f.input :venue_address %>
+  <%= f.input :time_start %>
+  <%= f.input :time_end %>
+  <%= f.input :date_inclusive %>
+  <%= f.input :subject_list %>
+  <%= f.submit "Next Step!" %>
 <% end %>
