@@ -1,0 +1,11 @@
+<h1><%= @candidate.nickname %></h1>
+<br>
+<ul>
+	<li><%= @candidate.first_name %></li>
+	<li><%= @candidate.last_name %></li>
+	
+		<li><%= @candidate.slogan %></li>
+
+</ul>
+<hr>
+<%= link_to "Back to List", candidates_path %>

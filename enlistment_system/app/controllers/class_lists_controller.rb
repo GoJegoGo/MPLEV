@@ -1,4 +1,4 @@
-class Class_listsController < ApplicationController
+class Class_ListsController < ApplicationController
     def index
         @class_list = Class_list.all
         render "class_lists/index.html.erb"

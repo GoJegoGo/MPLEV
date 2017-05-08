@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: "creatives#index"
   get "/assessments/index.html.erb", to: "assessments#index", as: "index"
-  
+  resources :students
   # get "/assessments", to: "assessments#index"
   resources :assessments
   namespace :admin do
