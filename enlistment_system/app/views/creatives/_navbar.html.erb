@@ -12,7 +12,8 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a class="page-scroll" href="#about">About</a>
@@ -22,10 +23,53 @@
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
+
+                <li>
+                    <a href="#admin" data-toggle="modal">Admin</a>
+
+                </li>
+                
             </ul>
+
+
         </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="modal fade" id ="admin" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <form class="form-horizontal">
+                        <div class="modal-header">
+                            <h4>Log-In</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for ="login-name" class="col-lg-2 control-label">Name</label>
+                            <div class ="col-lg-10">
+                                <input type = "text" class="form-control" id="login-name" placeholder="Full Name">
+                            </div>
+                            </div>
+                            </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                            <label for ="login-password" class="col-lg-2 control-label">Password</label>
+                            <div class ="col-lg-10">
+                                <input type = "text" class="form-control" id="login-password" placeholder="**********">
+                                </div>
+                                </div>
+                                </div>
+
+                                <div class = "modal-footer">
+                                    <button class = "btn-btn-default" data-dismiss = "modal">Close</a>
+                                    <button class = "btn-btn-primary" type = "submit">Ok</button>
+                                   
+                                    </div>
+                                </form>
+
+
         <!-- /.navbar-collapse -->
-    </div>
+        </div>
+
+
     <!-- /.container-fluid -->
     <!--<button class="btn btn-primary btn-sm " data-target="#login" data-toggle="modal" >Login</button>
 
