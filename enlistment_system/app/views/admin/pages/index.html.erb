@@ -1,1 +1,114 @@
 <h1>Admin Dashboard</h1>
+
+<h2>Shortcuts</h2>
+    <ul>
+        <li><%= link_to "Classes", admin_class_catalogs_path %></li>
+        <li><%= link_to "Packages", admin_packages_path %></li>
+        <li><%= link_to "Students", admin_students_path %></li>
+    </ul>
+
+<h3> List of Classes Offered </h3>
+    
+<br>
+    <table width="100%", align="left">
+        <tr>
+            <th>Class ID</th>
+            <th>Venue Address</th>
+            <th>Time Start</th>
+            <th>Time End</th>
+            <th>Date Inclusive</th>
+            <th>Subject List</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <% @class_catalogs.each do |a| %>
+                <td><%= a.class_id %></td>
+                <td><%= a.venue_address %></td>
+                <td><%= a.time_start %></td>
+                <td><%= a.time_end %></td>
+                <td><%= a.date_inclusive %></td>
+                <td><%= a.subject_list %></td>
+                <td>
+                    <%= link_to "Show", admin_class_catalog_path(a.id) %>
+                    <%= link_to "Edit", edit_admin_class_catalog_path(a.id) %>
+                    <%= link_to "Delete", admin_class_catalog_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+            <% end %>
+        </tr>
+       
+    </table>
+
+<br><br><br><br>
+
+<h3> List of Packages Offered </h3>
+    
+<br>
+
+    <table width="100%", align="left">
+        <tr>
+            <th>Package ID</th>
+            <th>Name</th>
+            <th>Package Type</th>
+            <th>Initial Price</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <% @packages.each do |a| %>
+                <td><%= a.package_id %></td>
+                <td><%= a.name %></td>
+                <td><%= a.package_type %></td>
+                <td><%= a.initial_price %></td>
+                <td>
+                    <%= link_to "Show", admin_package_path(a.id) %>
+                    <%= link_to "Edit", edit_admin_package_path(a.id) %>
+                    <%= link_to "Delete", admin_package_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+            <% end %>
+        </tr>
+    </table>
+
+<br>
+<br>
+<br>
+<br>
+    
+
+<h3> List of Students </h3>
+    
+<br>
+
+<table width="200%", align="left">
+    <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Email Address</th>
+        <th>High School</th>
+        <th>Birthday</th>
+        <th>Age</th>
+        <th>Contact Number</th>
+        <th>Father Name</th>
+        <th>Mother Name</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <% @students.each do |a| %>
+            <td><%= a.student_id %></td>
+            <td><%= a.name %></td>
+            <td><%= a.email_ad %></td>
+            <td><%= a.high_school %></td>
+            <td><%= a.birthdate %></td>
+            <td><%= a.age %></td>
+            <td><%= a.contact_number %></td>
+            <td><%= a.father_name %></td>
+            <td><%= a.mother_name %></td>
+            <td>
+                <%= link_to "Show", admin_student_path(a.id) %>
+                <%= link_to "Edit", edit_admin_student_path(a.id) %>
+                <%= link_to "Delete", admin_student_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+        <% end %>
+    </tr>
+</table>
+
+<br>
+<br>

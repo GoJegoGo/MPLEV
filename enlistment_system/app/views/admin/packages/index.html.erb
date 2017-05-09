@@ -1,30 +1,32 @@
-<h1 style="text-align:center"> Here are the Candidates </h1>
+<h1>List of Packages </h1>
 
-<%= link_to "See Total Vote Count", votes_path %>
-
-<table width="70%", align="center">
-  <tr>
-    <th>Position</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th> Nickname</th>
-    <th>Slogan</th>
-  </tr>
-  <% @candidates.each do |a| %>
-    <tr>
-      <td><%= a.position.name %></td>
-      <td><%= a.first_name %></td>
-      <td><%= a.last_name %></td>
-      <td><%= a.nickname %></td>
-      <td><%= a.slogan %></td>
-      <td>
-        <%= link_to "Show", candidate_path(a.id) %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-
-<%= link_to("Back to Home", root_path) %>
-
-
+<h2>Shortcuts</h2>
+    <ul>
+        <li><%= link_to "Add Packages", new_admin_package_path %></li>
+        <li><%= link_to "Students", admin_students_path %></li>
+        <li><%= link_to "Classes", admin_class_catalogs_path %></li>
+        <li><%= link_to "Dashboard", admin_path %></li>
+    </ul>
+    
+  <table width="100%", align="left">
+        <tr>
+            <th>Package ID</th>
+            <th>Name</th>
+            <th>Package Type</th>
+            <th>Initial Price</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <% @packages.each do |a| %>
+                <td><%= a.package_id %></td>
+                <td><%= a.name %></td>
+                <td><%= a.package_type %></td>
+                <td><%= a.initial_price %></td>
+                <td>
+                    <%= link_to "Show", admin_package_path(a.id) %>
+                    <%= link_to "Edit", edit_admin_package_path(a.id) %>
+                    <%= link_to "Delete", admin_package_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+            <% end %>
+        </tr>
+  </table>

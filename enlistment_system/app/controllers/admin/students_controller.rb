@@ -18,7 +18,7 @@ class StudentsController < ApplicationController
     def create
         @student = Student.new(student_params)
         if @student.save
-            redirect_to student_path(@student.id)
+            redirect_to admin_student_path(@student.id)
         else
             render "admin/students/new.html.erb"
         end
@@ -32,7 +32,7 @@ class StudentsController < ApplicationController
     def update
         @student = Student.find(params[:id])
         if @student.update(student_params)
-            redirect_to student_path(@student.id)
+            redirect_to admin_student_path(@student.id)
         else
             render "admin/students/edit.html.erb"
         end
@@ -41,7 +41,7 @@ class StudentsController < ApplicationController
     def destroy
         @student = Student.find(params[:id])
         @student.destroy!
-        redirect_to students_path
+        redirect_to admin_students_path
     end
 
     def student_params
