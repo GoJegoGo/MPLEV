@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Mentors Plus</a> <img src="http://i64.tinypic.com/21cz1iw.png" width="30px" height="30px" border="0">
+            <a class="navbar-brand page-scroll" href="#page-top">Mentors Plus</a> <img src="http://i64.tinypic.com/21cz1iw.png" width="30px" height="30px" border="0" >
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,6 +42,29 @@
                             <h4>Log-In</h4>
                         </div>
                         <div class="modal-body">
+
+            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+                <div><%= f.label :email %><br />
+
+                <%= f.email_field :email, :autofocus => true %></div>
+
+                <div><%= f.label :password %><br />
+
+                <%= f.password_field :password %></div>
+
+                <% if devise_mapping.rememberable? -%>
+
+                <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+
+                <% end -%>
+                <%= f.submit "Confirm", :class => 'btn-btn-primary' %>
+                <%= link_to "Confirm", admin_path %>
+
+                <% end %>
+
+                </div>
+                        <!--<div class="modal-body">
                             <div class="form-group">
                                 <label for ="login-name" class="col-lg-2 control-label">Name</label>
                             <div class ="col-lg-10">
@@ -63,39 +86,10 @@
                                     <button class = "btn-btn-primary" type = "submit">Ok</button>
                                    
                                     </div>
-                                </form>
-
-
+                                </form>-->
         <!-- /.navbar-collapse -->
         </div>
 
-
     <!-- /.container-fluid -->
-    <!--<button class="btn btn-primary btn-sm " data-target="#login" data-toggle="modal" >Login</button>
-
-                    <div class="modal" id="login" tabindex="-1">
-                        <div class="modal dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Log-in</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="inputUserName">Username</label>
-                                <input class="form-control" placeholder="Login Username" type="text" id="inputUserName">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputPassword">Password</label>
-                                <input class="form-control" placeholder="Login Password" type="password" id="inputPassword">
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button class="btn btn-primary">Login</button>
-                        <button class="btn btn-primary" data-dismiss="modal">Close</button>
-                    </div>-->
 </nav>
 
