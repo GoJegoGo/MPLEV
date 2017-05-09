@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508154027) do
+ActiveRecord::Schema.define(version: 20170509070844) do
 
   create_table "assessments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "assessment_id"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 20170508154027) do
   end
 
   create_table "packages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "package_id"
     t.string   "name"
     t.string   "package_type"
     t.decimal  "initial_price", precision: 10
@@ -61,7 +60,6 @@ ActiveRecord::Schema.define(version: 20170508154027) do
   end
 
   create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "student_id"
     t.string   "name"
     t.string   "email_ad"
     t.string   "high_school"
@@ -72,6 +70,7 @@ ActiveRecord::Schema.define(version: 20170508154027) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.date     "birthdate"
+    t.integer  "package_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -89,6 +88,14 @@ ActiveRecord::Schema.define(version: 20170508154027) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "votes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "student_id"
+    t.text     "comments",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

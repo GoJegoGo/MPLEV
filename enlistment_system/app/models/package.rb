@@ -1,5 +1,11 @@
 class Package < ApplicationRecord
 
-belongs_to :student
+
+has_many :students
+accepts_nested_attributes_for :students
 belongs_to :assessment
+has_many :votes
+
+
+
 end

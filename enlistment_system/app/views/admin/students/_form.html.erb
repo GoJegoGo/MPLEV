@@ -1,4 +1,8 @@
 <%= simple_form_for([:admin, @student]) do |f| %>
+  
+  <%= f.association :package %>
+  <%= f.input :package %>
+  <%= f.input :package %>
   <%= f.input :name %>
   <%= f.input :email_ad %>
   <%= f.input :high_school %>
@@ -7,4 +11,5 @@
   <%= f.input :father_name %>
   <%= f.input :mother_name %>
   <%= f.submit %>
+  
 <% end %>
