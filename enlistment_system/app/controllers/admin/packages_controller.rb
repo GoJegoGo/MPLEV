@@ -16,9 +16,9 @@ module Admin
         end
 
         def create
-            @package = Package.new(package_params)
+            @package = Package.new(package_params())
             if @package.save
-                redirect_to admin_packages_path(@package.id)
+                redirect_to admin_package_path(@package.id)
             else
                 render "admin/packages/new.html.erb"
             end
@@ -45,7 +45,7 @@ module Admin
         end
 
         def package_params
-            params_require(:package).permit!
+            params.require(:package).permit!
         end
     end
 end
