@@ -1,8 +1,7 @@
-<%= simple_form_for(@candidate) do |f| %>
-  <%= f.association :position %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :nickname %>
-  <%= f.input :slogan %>
+<%= simple_form_for([:admin, @package]) do |f| %>
+  <%= f.input :package_id %>
+  <%= f.input :name %>
+  <%= f.input :package_type %>
+  <%= f.input :initial_price %>
   <%= f.submit %>
 <% end %>

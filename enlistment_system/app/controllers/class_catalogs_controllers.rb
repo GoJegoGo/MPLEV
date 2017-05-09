@@ -1,4 +1,4 @@
-class ClassCatalogsController < ApplicationController
+class Class_CatalogsController < ApplicationController
     def index
         @class_catalogs = Class_catalog.all
         render "class_catalogs/index.html.erb"
