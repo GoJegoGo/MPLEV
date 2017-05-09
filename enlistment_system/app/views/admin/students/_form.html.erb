@@ -1,5 +1,4 @@
-<%= simple_form_for(@student) do |f| %>
-  <%= f.association :position %>
+<%= simple_form_for([:admin, @student]) do |f| %>
   <%= f.input :name %>
   <%= f.input :email_ad %>
   <%= f.input :high_school %>
