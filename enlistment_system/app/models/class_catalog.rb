@@ -1,6 +1,7 @@
 class ClassCatalog < ApplicationRecord
 
 has_many :students
-belongs_to :assessment
+has_many :assessments
+    accepts_nested_attributes_for :assessments
 
 end

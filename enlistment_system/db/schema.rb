@@ -10,22 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509070844) do
+ActiveRecord::Schema.define(version: 20170510014635) do
 
   create_table "assessments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "assessment_id"
     t.integer  "student_id"
-    t.string   "class_id"
-    t.string   "package_id"
     t.integer  "payment_id"
     t.integer  "period_id"
-    t.text     "announcement",  limit: 65535
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.text     "announcement",     limit: 65535
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "class_catalog_id"
+    t.integer  "package_id"
   end
 
   create_table "class_catalogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "class_id"
     t.string   "venue_address"
     t.time     "time_start"
     t.time     "time_end"
@@ -55,7 +54,6 @@ ActiveRecord::Schema.define(version: 20170509070844) do
   create_table "periods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "period_id"
     t.datetime "period_duration"
   end
 
@@ -67,10 +65,11 @@ ActiveRecord::Schema.define(version: 20170509070844) do
     t.string   "contact_number"
     t.string   "father_name"
     t.string   "mother_name"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.date     "birthdate"
     t.integer  "package_id"
+    t.integer  "class_catalog_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

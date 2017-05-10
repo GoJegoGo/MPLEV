@@ -1,2 +1,0 @@
-class ClassList < ApplicationRecord
-end

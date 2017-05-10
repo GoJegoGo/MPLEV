@@ -45,7 +45,7 @@ class ClassCatalogsController < ApplicationController
     end
 
     def class_catalog_params
-        params_require(:class_catalog).permit!
+        params.require(:class_catalog).permit!
     end
 end
 end
