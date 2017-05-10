@@ -464,6 +464,25 @@ fieldset[disabled] .btn-primary.active {
     padding: 15px 30px;
 }
 
+
+h2.panel-title a:before {
+    content: "\2b";
+    padding: 10px;
+    background-color: #003859;
+    color: #fff;
+}
+
+h2.panel-title a {
+    text-decoration: none;
+}
+
+.panel-default>.panel-heading {
+    padding: 10px 15px 10px 0;
+    height: 50px;
+    background-color: #0374b5;
+    color: #fff;
+}
+
 ::-moz-selection {
     text-shadow: none;
     color: #fff;
@@ -489,3 +508,4 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #222;
 }
+

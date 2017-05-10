@@ -1,8 +1,67 @@
 <h1 style="text-align:center"> MentorsPlus </h1>
 
+<a href="#enlist" data-toggle="modal">Begin Enlistment</a>
+
+  
+            <div class="modal fade" id ="enlist" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <form class="form-horizontal">
+                        <div class="modal-header">
+                            <h4></h4>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="checkbox">
+                            <h2>Choos a class</h2>
+                              <label>
+                                <input type="checkbox" value="option1" />
+                                April 3 - April 23; Golden Crescent Mansion; 1:00 PM - 5:00 PM
+                              </label>
+                              <label>
+                                <input type="checkbox" value="option2" />
+                                April 5 - April 23; ISO Room 5&6; 8:00 AM - 5:00 NN
+                              </label>
+                              <label>
+                                <input type="checkbox" value="option3" />
+                                April 27 - May 7; Leong Hall Auditorium; 1:00 PM - 5:00 PM
+                              </label>
+                            <h2>Fill-Up Student Information</h2>
+                            <div class="form-group">
+                              <label for="inputName">Full Name</label>
+                              <input class="form-control" type="text" id="inputName" placeholder="Jego Reyes" />
+                            </div>
+                            <div class="form-group">
+                               <label for="inputBirth">Date of Birth</label>
+                               <input class="form-control" type="date" id="inputBirth"/>
+                            </div>
+                            <div class="form-group">
+                               <label for="inputEmail">Email Address</label>
+                               <input class="form-control" type="email" id="inputEmail" placeholder="1@gmail.com" />
+                            </div>
+                          </form>
+                          <div class = "btn-group" data-toggle="buttons">
+                            <label class ="btn btn-primary active">
+                              <input type="checkbox" checked autocomplete="off">
+                            </label>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+
+
 <div class = "container">
-  <div class = "panel-group" id = "accordion">
-  <div class = "panel panel-primary">
+  <div class = "panel-group" id = "accordion" aria-multiselectable="true">
+  <div class = "panel panel-default">
     <div class = "panel-heading">
       <h2 class = "panel-title">
         <a href="#collapseone" data-toggle="collapse" data-parent = "accordion">
@@ -51,7 +110,7 @@
    
 <div class = "container">
   <div class = "panel-group" id = "accordion">
-  <div class = "panel panel-primary">
+  <div class = "panel panel-default">
     <div class = "panel-heading">
       <h2 class = "panel-title">
         <a href="#collapsetwo" data-toggle="collapse" data-parent = "accordion">
@@ -60,6 +119,7 @@
   </div>
   <div id ="collapsetwo" class="panel-collapse collapse">
     <div class = "panel-body">
+
 
       <table width="70%", align="left">
         <tr>
@@ -78,7 +138,7 @@
 
   <div class = "container">
   <div class = "panel-group" id = "accordion">
-  <div class = "panel panel-primary">
+  <div class = "panel panel-default">
     <div class = "panel-heading">
       <h2 class = "panel-title">
         <a href="#collapsethree" data-toggle="collapse" data-parent = "accordion">
@@ -105,4 +165,3 @@
 
 
 
-<h7><%= link_to("Start Enlistment", new_student_path) %></h7>
