@@ -7,26 +7,29 @@ class AssessmentsController < ApplicationController
 
     def show
         @assessment = Assessment.find(params[:id])
-        render "assessment/show.html.erb"
+        render "assessments/show.html.erb"
     end
 
     def new
         @assessment = Assessment.new
-        render "assessment/new.html.erb"
+        @assessment = Student.build_assessment
+        @assessment = Package.build_assessment
+        @assessment = Class_Catalog.build_assessment 
+        render "assessments/new.html.erb"
     end
 
     def create
-        @assessment = Assessment.new(student_params)
+        @assessment = Assessment.new(assessment_params) 
         if @assessment.save
             redirect_to assessment_path(@assessment.id)
         else
-            render "assessment/new.html.erb"
+            render "assessments/new.html.erb"
         end
     end 
 
     def edit
         @assessment = Assessment.find(params[:id])
-        render "assessment/edit.html.erb"
+        render "assessments/edit.html.erb"
     end
 
     def update
@@ -34,7 +37,7 @@ class AssessmentsController < ApplicationController
         if @assessment.update(assessment_params)
             redirect_to assessment_path(@assessment.id)
         else
-            render "assessment/edit.html.erb"
+            render "assessments/edit.html.erb"
         end
     end
 
@@ -45,6 +48,8 @@ class AssessmentsController < ApplicationController
     end
 
     def assessment_params
-        params_require(:assessment).permit!
+        params.require(:assessment).permit.(:announcement, students_attributes: [:name, :email_ad, :high_school, :birthdate, :age, :contact_number, :father_name, :mother_name])
+        params.require(:assessment).permit.(:announcement, packages_attributes: [:name])
+        params.require(:assessment).permit.(:announcement, class_catalogs_attributes: [:class_catalog_id])
     end
 end

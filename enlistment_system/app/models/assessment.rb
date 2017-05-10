@@ -1,7 +1,10 @@
 class Assessment < ApplicationRecord
 
-has_many :class_catalogs
-has_many :packages
-has_many :students
-has_many :periods
+belongs_to :student
+
+belongs_to :payment
+belongs_to :package
+belongs_to :class_catalog
+belongs_to :period
+
 end

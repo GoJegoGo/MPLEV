@@ -1,7 +1,8 @@
 class Student < ApplicationRecord
 
-has_one :class_catalog 
-belongs_to :assessment
+belongs_to :class_catalog 
+has_many :assessments
+    accepts_nested_attributes_for :assessments
 belongs_to :package
 
 end

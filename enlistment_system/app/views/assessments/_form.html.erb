@@ -1,14 +1,22 @@
-<%= simple_form_for(@student) do |f| %>
-  
-  <%= f.input :name %>
-  <%= f.input :email_ad %>
-  <%= f.input :high_school %>
-  <%= f.input :birthdate %>
-  <%= f.input :age %>
-  <%= f.input :contact_number %>
-  <%= f.input :father_name %>
-  <%= f.input :mother_name %>
-
+<%= simple_form_for(@assessment) do |f| %>
+  <%= f.input :announcement %>
+    <%= f.fields_for :package do |package| %>
+      <%= package.input :name %>
+    <% end %>
+    <%= f.fields_for :class_catalog do |catalog| %>
+      <%= catalog.input :class_catalog %>
+    <% end %>
+    <%= f.fields_for :student do |student| %>
+      <%= student.input :name %>
+      <%= student.input :email_ad %>
+      <%= student.input :high_school %>
+      <%= student.input :birthdate %>
+      <%= student.input :age %>
+      <%= student.input :contact_number %>
+      <%= student.input :father_name %>
+      <%= student.input :mother_name %>
+    <% end %>
   <%= f.submit %>
+  
+  
 <% end %>
-

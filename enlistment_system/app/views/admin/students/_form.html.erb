@@ -1,8 +1,6 @@
 <%= simple_form_for([:admin, @student]) do |f| %>
-  
   <%= f.association :package %>
-  <%= f.input :package %>
-  <%= f.input :package %>
+  <%= f.association :class_catalog %>
   <%= f.input :name %>
   <%= f.input :email_ad %>
   <%= f.input :high_school %>

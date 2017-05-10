@@ -1,6 +1,7 @@
 class Period < ApplicationRecord
 
-belongs_to :class_catalog
-belongs_to :assessment
+has_many :class_catalogs
+has_many :assessments
+    accepts_nested_attributes_for :assessments
 
 end
