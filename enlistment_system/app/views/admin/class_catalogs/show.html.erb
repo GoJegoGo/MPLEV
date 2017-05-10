@@ -1,11 +1,12 @@
-<h1><%= @candidate.nickname %></h1>
+<h1><%= @class_catalog.venue_address %></h1>
 <br>
 <ul>
-	<li><%= @candidate.first_name %></li>
-	<li><%= @candidate.last_name %></li>
+	<li><%= @class_catalog.date_start %></li>
+	<li><%= @class_catalog.date_end %></li>
+	<li><%= @class_catalog.time_start %></li>
+	<li><%= @class_catalog.time_end %></li>
 	
-		<li><%= @candidate.slogan %></li>
 
 </ul>
 <hr>
-<%= link_to "Back to List", candidates_path %>
+<%= link_to "Back to List", admin_class_catalogs_path %>

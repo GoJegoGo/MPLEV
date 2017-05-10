@@ -23,11 +23,9 @@
         </tr>
         <tr>
             <% @class_catalogs.each do |a| %>
-                <td><%= a.class_id %></td>
                 <td><%= a.venue_address %></td>
                 <td><%= a.time_start %></td>
                 <td><%= a.time_end %></td>
-                <td><%= a.date_inclusive %></td>
                 <td><%= a.subject_list %></td>
                 <td>
                     <%= link_to "Show", admin_class_catalog_path(a.id) %>
@@ -55,9 +53,8 @@
         </tr>
         <tr>
             <% @packages.each do |a| %>
-                <td><%= a.package_id %></td>
-                <td><%= a.name %></td>
                 <td><%= a.package_type %></td>
+                <td><%= a.name %></td>
                 <td><%= a.initial_price %></td>
                 <td>
                     <%= link_to "Show", admin_package_path(a.id) %>

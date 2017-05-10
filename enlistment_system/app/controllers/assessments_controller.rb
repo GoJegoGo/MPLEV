@@ -2,6 +2,7 @@ class AssessmentsController < ApplicationController
 
     def index 
         @assessments = Assessment.all
+        @class_catalogs = ClassCatalog.all
         render "/assessments/index.html.erb"
     end
 

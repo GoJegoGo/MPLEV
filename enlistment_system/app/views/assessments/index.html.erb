@@ -44,9 +44,9 @@
                             <label class ="btn btn-primary active">
                               <input type="checkbox" checked autocomplete="off">
                             </label>
-</div>
-</form>
-</div>
+                          </div>
+                    </form>
+                </div>
 </div>
 </div>
 </div>
@@ -73,38 +73,22 @@
 
         <table width="70%", align="left">
             <tr>
-              <th>Class ID</th>
               <th>Venue Address</th>
               <th>Time Start</th>
               <th>Time End</th>
               <th>Date Start</th>
               <th>Date End</th>
-              </tr>
-              <tr>
-                <th>0001</th>
-                <th>Golden Crescent Mansion</th>
-                <th>1:00 PM
-                <th>5:00 PM</th>
-                <th>April 3</th>
-                <th>April 23</th>
-              </th>
-               <tr>
-                <th>0002</th>
-                <th>ISO Room 5&6</th>
-                <th>8:00 AM</th>
-                <th>12:00 NN</th>
-                <th>April 5</th>
-                <th>April 25</th>
-              </th> 
-               <tr>
-                <th>0003</th>
-                <th>Leong Hall Auditorium</th>
-                <th>1:00 PM</th>
-                <th>5:00 PM</th>
-                <th>April 27</th>
-                <th>May 27</th>
-              </th>                             
-              </table>
+            </tr>
+              <% @class_catalogs.each do |a| %>
+                  <tr>
+                    <td><%= a.venue_address %></td>
+                    <td><%= a.time_start %></td>
+                    <td><%= a.time_end %></td>
+                    <td><%= a.date_start %></td>
+                    <td><%= a.date_end %></td>
+                  </tr>
+                <% end %>                           
+          </table>
     </div>
       </div>
       </div>
@@ -169,7 +153,5 @@
 
 
 
-<<<<<<< HEAD
-=======
 <h7><%= link_to("Start Enlistment", new_assessment_path) %></h7>
->>>>>>> cf7f026fb8be19b749e505154da31bef83344813
+
