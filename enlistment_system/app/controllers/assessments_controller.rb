@@ -11,10 +11,9 @@ class AssessmentsController < ApplicationController
     end
 
     def new
-        @assessment = Assessment.new
-        @assessment = Student.build_assessment
-        @assessment = Package.build_assessment
-        @assessment = Class_Catalog.build_assessment 
+        @student = Student.new
+        @student.build_assessment
+
         render "assessments/new.html.erb"
     end
 

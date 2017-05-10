@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510014635) do
+ActiveRecord::Schema.define(version: 20170510084518) do
 
   create_table "assessments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "assessment_id"
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(version: 20170510014635) do
     t.string   "venue_address"
     t.time     "time_start"
     t.time     "time_end"
-    t.date     "date_inclusive"
     t.string   "subject_list"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.date     "date_start"
+    t.date     "date_end"
   end
 
   create_table "class_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -49,6 +50,15 @@ ActiveRecord::Schema.define(version: 20170510014635) do
     t.decimal  "initial_price", precision: 10
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "number_of_installment"
+    t.boolean  "has_paid"
+    t.integer  "discount_rate"
+    t.decimal  "final_amount",          precision: 10
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "periods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

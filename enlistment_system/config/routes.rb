@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :packages
     resources :students
     resources :periods
+    resources :assessments
     get "/pages/index.html.erb", to: "pages#index"
   end
 end
