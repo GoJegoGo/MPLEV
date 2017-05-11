@@ -121,14 +121,28 @@
     <div class = "panel-body">
 
 
-      <table width="70%", align="left">
+      <table width="100%", align="left">
         <tr>
-        <th>Package ID</th>
-        <th>Name</th>
-        <th>Package Type</th>
-        <th>Initial Price</th>
+            <th>Name</th>
+            <th>Package Type</th>
+            <th>Initial Price</th>
+            <th>Actions</th>
         </tr>
-        </table>
+        
+            <% @packages.each do |a| %>
+        <tr>
+                <td><%= a.package_type %></td>
+                <td><%= a.name %></td>
+                <td><%= a.initial_price %></td>
+                <td>
+                    <%= link_to "Show", admin_package_path(a.id) %>
+                    <%= link_to "Edit", edit_admin_package_path(a.id) %>
+                    <%= link_to "Delete", admin_package_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+        </tr>
+            <% end %>
+        
+    </table>
 
         </div>
         </div>

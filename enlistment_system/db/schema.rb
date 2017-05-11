@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170510154844) do
-=======
-ActiveRecord::Schema.define(version: 20170510170441) do
->>>>>>> f9904a66c78cdbe8c94c874f1e59abd98c06ae1e
+ActiveRecord::Schema.define(version: 20170511043631) do
 
   create_table "assessments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "assessment_id"
@@ -35,19 +31,10 @@ ActiveRecord::Schema.define(version: 20170510170441) do
     t.string   "subject_list"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.date     "date_start"
-    t.date     "date_end"
     t.integer  "max_slots"
     t.integer  "slots_taken"
-  end
-
-  create_table "class_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "class_id"
-    t.integer  "student_id"
-    t.integer  "period_id"
-    t.string   "professor_note"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.date     "date_start"
+    t.date     "date_end"
   end
 
   create_table "packages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -68,9 +55,10 @@ ActiveRecord::Schema.define(version: 20170510170441) do
   end
 
   create_table "periods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.datetime "period_duration"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.date     "period_start"
+    t.date     "period_end"
   end
 
   create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

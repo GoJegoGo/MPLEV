@@ -109,14 +109,22 @@
     <div class = "panel-body">
 
 
-      <table width="70%", align="left">
+      <table width="100%", align="left">
         <tr>
-        <th>Package ID</th>
-        <th>Name</th>
-        <th>Package Type</th>
-        <th>Initial Price</th>
+            <th>Name</th>
+            <th>Package Type</th>
+            <th>Initial Price</th>
         </tr>
-        </table>
+        
+            <% @packages.each do |a| %>
+        <tr>
+                <td><%= a.package_type %></td>
+                <td><%= a.name %></td>
+                <td><%= a.initial_price %></td>
+        </tr>
+            <% end %>
+        
+    </table>
 
         </div>
         </div>
@@ -138,12 +146,12 @@
 
       <table width="70%", align="left">
         <tr>
-        <th>Algebra</th>
-        <th>Geometry</th>
-        <th>Trigonometry</th>
-        <th>Biology</th>
+          <th>Algebra</th>
+          <th>Geometry</th>
+          <th>Trigonometry</th>
+          <th>Biology</th>
         </tr>
-        </table>
+      </table>
 
         </div>
         </div>
