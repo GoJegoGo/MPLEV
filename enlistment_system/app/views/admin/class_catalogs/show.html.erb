@@ -1,12 +1,11 @@
 <h1><%= @class_catalog.venue_address %></h1>
 <br>
 <ul>
-	<li><%= @class_catalog.date_start %></li>
-	<li><%= @class_catalog.date_end %></li>
-	<li><%= @class_catalog.time_start %></li>
-	<li><%= @class_catalog.time_end %></li>
-	
-
+	<li>Max Slots: <%= @class_catalog.max_slots %></li> 
+	<li>Date Start: <%= @class_catalog.date_start %></li>
+	<li>Date End: <%= @class_catalog.date_end %></li>
+	<li>Time Start: <%= @class_catalog.time_start %></li>
+	<li>Time End: <%= @class_catalog.time_end %></li>
 </ul>
 <hr>
 <%= link_to "Back to List", admin_class_catalogs_path %>

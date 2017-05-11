@@ -10,8 +10,13 @@
 
 <table width="150%", align="left">
         <tr>
+<<<<<<< HEAD
            
+=======
+>>>>>>> f9904a66c78cdbe8c94c874f1e59abd98c06ae1e
             <th>Venue Address</th>
+            <th>Max Slots</th>
+            <th>Slots Taken</th>
             <th>Time Start</th>
             <th>Time End</th>
             <th>Date Start</th>
@@ -19,10 +24,16 @@
             <th>Subject List</th>
             <th>Actions</th>
         </tr>
-        <tr>
+        
             <% @class_catalogs.each do |a| %>
+<<<<<<< HEAD
                 
+=======
+        <tr>
+>>>>>>> f9904a66c78cdbe8c94c874f1e59abd98c06ae1e
                 <td><%= a.venue_address %></td>
+                <td><%= a.max_slots %></td>
+                <td><%= a.slots_taken %></td>
                 <td><%= a.time_start %></td>
                 <td><%= a.time_end %></td>
                 <td><%= a.date_start %></td>
@@ -33,7 +44,8 @@
                     <%= button_to "Edit", edit_admin_class_catalog_path(a.id), :method => "get" %>
                     <%= link_to "Delete", admin_class_catalog_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                 </td>
-            <% end %>
         </tr>
        
+            <% end %>
+        
 </table>
