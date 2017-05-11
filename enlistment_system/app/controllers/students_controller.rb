@@ -11,16 +11,20 @@ class StudentsController < ApplicationController
 
     def new
         @student = Student.new
+        @student.build_assessment
         render "students/new.html.erb"
     end
 
     def create
         @student = Student.new(student_params)
+        @student.assessment.final_amount = @student.assessment.package.initial_price
+        @student.assessment.has_paid = FALSE
         if @student.save
             redirect_to student_path(@student.id)
         else
             render "students/new.html.erb"
         end
+        a
     end 
 
     def edit
@@ -42,9 +46,8 @@ class StudentsController < ApplicationController
         @student.destroy!
         redirect_to students_path
     end
-
-    def student_params
-        params_require(:student).permit!
-    end
-
+    private     
+        def student_params
+            params.require(:student).permit!
+        end
 end

@@ -1,5 +1,7 @@
 <h1>Admin Dashboard</h1>
 
+<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+
 <h2>Shortcuts</h2>
     <ul>
         <li><%= link_to "Classes", admin_class_catalogs_path %> - <%= link_to "Add Classes", new_admin_class_catalog_path%></li>
@@ -83,32 +85,17 @@
 
 <table width="200%", align="left">
     <tr>
-        <th>Student ID</th>
         <th>Name</th>
-        <th>Email Address</th>
-        <th>High School</th>
-        <th>Birthday</th>
-        <th>Age</th>
-        <th>Contact Number</th>
-        <th>Father Name</th>
-        <th>Mother Name</th>
         <th>Actions</th>
     </tr>
     <tr>
         <% @students.each do |a| %>
-            <td><%= a.student_id %></td>
             <td><%= a.name %></td>
-            <td><%= a.email_ad %></td>
-            <td><%= a.high_school %></td>
-            <td><%= a.birthdate %></td>
-            <td><%= a.age %></td>
-            <td><%= a.contact_number %></td>
-            <td><%= a.father_name %></td>
-            <td><%= a.mother_name %></td>
             <td>
                 <%= link_to "Show", admin_student_path(a.id) %>
                 <%= link_to "Edit", edit_admin_student_path(a.id) %>
                 <%= link_to "Delete", admin_student_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to "Add Payment", new_student_payment_path(a.id) %>
             </td>
         <% end %>
     </tr>

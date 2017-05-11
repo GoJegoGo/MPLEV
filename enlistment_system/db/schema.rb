@@ -10,18 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511043631) do
+ActiveRecord::Schema.define(version: 20170511105854) do
 
   create_table "assessments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "assessment_id"
     t.integer  "student_id"
-    t.integer  "payment_id"
     t.integer  "period_id"
-    t.text     "announcement",     limit: 65535
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.text     "announcement",           limit: 65535
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.integer  "class_catalog_id"
     t.integer  "package_id"
+    t.integer  "number_of_installments"
+    t.integer  "final_amount"
+    t.boolean  "has_paid"
+    t.integer  "discount_rate"
   end
 
   create_table "class_catalogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -46,12 +49,10 @@ ActiveRecord::Schema.define(version: 20170511043631) do
   end
 
   create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "number_of_installment"
-    t.boolean  "has_paid"
-    t.integer  "discount_rate"
-    t.decimal  "final_amount",          precision: 10
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "amount_paid"
+    t.integer  "assessment_id"
   end
 
   create_table "periods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
