@@ -58,6 +58,8 @@ gem 'yaml_db'
 
 gem 'devise'
 
+gem 'devise-bootstrap-views'
+
 gem 'simple_form'
 
 gem 'frontend-generators'

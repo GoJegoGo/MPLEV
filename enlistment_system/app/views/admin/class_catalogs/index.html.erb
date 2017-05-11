@@ -10,25 +10,27 @@
 
 <table width="150%", align="left">
         <tr>
-            <th>Class ID</th>
+           
             <th>Venue Address</th>
             <th>Time Start</th>
             <th>Time End</th>
-            <th>Date Inclusive</th>
+            <th>Date Start</th>
+            <th>Date End</th>
             <th>Subject List</th>
             <th>Actions</th>
         </tr>
         <tr>
             <% @class_catalogs.each do |a| %>
-                <td><%= a.class_catalog_id %></td>
+                
                 <td><%= a.venue_address %></td>
                 <td><%= a.time_start %></td>
                 <td><%= a.time_end %></td>
-                <td><%= a.date_inclusive %></td>
+                <td><%= a.date_start %></td>
+                <td><%= a.date_end %></td>
                 <td><%= a.subject_list %></td>
                 <td>
-                    <%= link_to "Show", admin_class_catalog_path(a.id) %>
-                    <%= link_to "Edit", edit_admin_class_catalog_path(a.id) %>
+                    <%= button_to "Show", admin_class_catalog_path(a.id), :method => "get" %>
+                    <%= button_to "Edit", edit_admin_class_catalog_path(a.id), :method => "get" %>
                     <%= link_to "Delete", admin_class_catalog_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                 </td>
             <% end %>
