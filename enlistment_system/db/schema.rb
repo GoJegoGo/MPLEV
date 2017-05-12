@@ -34,10 +34,19 @@ ActiveRecord::Schema.define(version: 20170511105854) do
     t.string   "subject_list"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "max_slots"
-    t.integer  "slots_taken"
     t.date     "date_start"
     t.date     "date_end"
+    t.integer  "max_slots"
+    t.integer  "slots_taken"
+  end
+
+  create_table "class_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "class_id"
+    t.integer  "student_id"
+    t.integer  "period_id"
+    t.string   "professor_note"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "packages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
