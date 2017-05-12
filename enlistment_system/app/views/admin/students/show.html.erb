@@ -1,11 +1,13 @@
-<h1><%= @candidate.nickname %></h1>
-<br>
-<ul>
-	<li><%= @candidate.first_name %></li>
-	<li><%= @candidate.last_name %></li>
-	
-		<li><%= @candidate.slogan %></li>
+<h1>List of Students</h1>
 
-</ul>
-<hr>
-<%= link_to "Back to List", candidates_path %>
+<% @stutdents.each do |a| %>
+        <tr>
+                <td><%= a.name %></td>
+                <td>
+                    <%= button_to "Show", admin_student_path(a.id), :method => "get" %>
+                    <%= button_to "Edit", edit_admin_student_path(a.id), :method => "get" %>
+                    <%= link_to "Delete", admin_student_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+					<%= lunk_to "Add Payment", new_admin_student_payment_path(a.id) %>
+				</td>
+        </tr>
+

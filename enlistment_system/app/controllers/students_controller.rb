@@ -24,7 +24,7 @@ class StudentsController < ApplicationController
         else
             render "students/new.html.erb"
         end
-        a
+        
     end 
 
     def edit

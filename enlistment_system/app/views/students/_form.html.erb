@@ -3,7 +3,7 @@
     <%= f.simple_fields_for :assessment do |a| %>
       <%= a.input :announcement %>
       <%= a.association :package %>
-      <%= a.association :class_catalog , collection: ClassCatalog.all.map{ |c| (c.max_slots > c.slots_taken) ? c=""} %>
+      <%= a.association :class_catalog %> 
       <%= a.input :number_of_installments, collection: [1,2,3] %>
     <% end %>
   <%= f.button :submit %>
