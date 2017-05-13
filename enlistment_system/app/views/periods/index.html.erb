@@ -19,9 +19,9 @@
         <%= period.period_end %>
       </tr>
       <tr>
-        <td><%= link_to 'Show', admin_period_path(period) %></td>
-        <td><%= link_to 'Edit', edit_admin_period_path(period) %></td>
-        <td><%= link_to 'Destroy', admin_period_path(period), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', period_path(period) %></td>
+        <td><%= link_to 'Edit', edit_period_path(period) %></td>
+        <td><%= link_to 'Destroy', period_path(period), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Period', new_admin_period_path %>
+<%= link_to 'New Period', new_period_path %>

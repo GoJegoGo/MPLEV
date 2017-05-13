@@ -1,25 +1,29 @@
-<h4 style="align:center">MentorsPlus</h4>
-<h4 style="align:center">Katipunan</h4>
-<h4 style="align:center">Assessment Form</h4>
-<h4 style="align:center">Assessed On: <%= assessment.created_at %></h4>
+<h4><center>MentorsPlus</center></h4>
+<h4><center>Katipunan</center></h4>
+<h4><center>Assessment Form</center></h4>
+<h4><center>Assessed On: <%= @student.assessment.created_at %></center></h4>
 
-<hr>
+<br><br>
 
 	<table width="100%", align="left">
 				<tr>
-				<th>ID No.</th>
-				<th>Student's Name</th>
-				<th>Class Code</th>
-				<th>Package</th>
-				<th>High School/th>
+					<th>ID No.</th>
+					<th>Student's Name</th>
+					<th>Class Code</th>
+					<th>Package</th>
+					<th>High School</th>
 				</tr>
 				<tr>
-					<th><%= @student.student_id %></th>
+					<th><%= @student.id %></th>
 					<th><%= @student.name %></th>
-					<th><%= @student.package.type %></th>
-					<th><%= @student.high_school</th>
+					<th><%= @student.assessment.class_catalog.id %></th>
+					<th><%= @student.assessment.package.package_type %></th>
+					<th><%= @student.high_school %></th>
 				<tr>
+				
 	</table>
+
+
 
 	<table width="100%", align="center">
             <tr>
@@ -27,18 +31,18 @@
               <th>Payment</th>
             </tr>
 			<tr>
-				<th>MentorsPlus Fee - <%= @student.package.type %> Package %></th>
+				<th>MentorsPlus Fee - <%= @student.assessment.package.package_type %> Package </th>
 				<th>
 					(
-					<%= @student.class_catalog.date_start %> - 
-					<%= @student.class_catalog.date_end %>, 
-					<%= @student.class_catalog.class_catalog_id %>,
-					<%= @student.class_catalog.venue_address %>, 
-					<%= @student.class_catalog.time_start%> -
-					<%= @student.class_catalog.time_end %>
+					<%= @student.assessment.class_catalog.date_start %> - 
+					<%= @student.assessment.class_catalog.date_end %>, 
+					<%= @student.assessment.class_catalog.id %>,
+					<%= @student.assessment.class_catalog.venue_address %>, 
+					<%= @student.assessment.class_catalog.time_start%> -
+					<%= @student.assessment.class_catalog.time_end %>
 					)
 				</th>
-				<th><%= @student.class_catalog.initial_price %></th>
+				<th><%= @student.assessment.package.initial_price %></th>
 			</tr>
 	</table>
 
@@ -46,10 +50,7 @@
 			<tr>
 				<th>Discount</th>
 				<th>
-					<%= @student.payment.discount_rate %> as of <%= assessment.create_on %>
-				</th>
-				<th>
-					<!-- need to put operations here -->
+					<%= @student.assessment.discount_rate %> as of <%= @student.assessment.created_at %>
 				</th>
 			</tr>
 	</table>
@@ -57,7 +58,7 @@
 	<table width="100%", align="center">
 			<tr>
 				<th><b>TOTAL</b></th>
-				<th><%= @student.payment.final_amount %></th>
+				<th><%= @student.assessment.final_amount %></th>
 			</tr>
 	</table>
 			

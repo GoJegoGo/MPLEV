@@ -1,3 +1,29 @@
+<h1> List of Students </h1>
 
+<h2>Shortcuts</h2>
+    <ul>
+        <li><%= link_to "New Assessment", new_student_path%></li>
+        <li><%= link_to "Classes", class_catalogs_path %></li>
+        <li><%= link_to "Packages", packages_path %></li>
+        <li><%= link_to "Dashboard", root_path %></li>
+    </ul>
 
-
+<table width="100%", align="left">
+    <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <% @students.each do |a| %>
+            <td><%= a.id %></td>
+            <td><%= a.name %></td>
+            <td>
+                <%= link_to "Show", student_path(a.id) %>
+                <%= link_to "Edit", edit_student_path(a.id) %>
+                <%= link_to "Delete", student_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'Add Payment', new_student_payment_path(:id) %>
+            </td>
+        <% end %>
+    </tr>
+</table>

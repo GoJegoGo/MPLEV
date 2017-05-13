@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     authenticated :user do
       resources :students
       resources :assessments
-      namespace :admin do
         resources :class_catalogs
         resources :packages
         resources :students do
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
         resources :periods
         resources :assessments
         get "/dashboard", to: "pages#index"
-      end
+
       root to: "pages#index"
     end
 

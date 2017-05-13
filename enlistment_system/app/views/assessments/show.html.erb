@@ -1,7 +1,7 @@
 <h4 style="align:center">MentorsPlus</h4>
 <h4 style="align:center">Katipunan</h4>
 <h4 style="align:center">Assessment Form</h4>
-<h4 style="align:center">Assessed On: <%= @assessment.created_at %></h4>
+<h4 style="align:center">Assessed On: <%= assessment.created_at %></h4>
 
 <hr>
 
@@ -30,8 +30,8 @@
 				<th>MentorsPlus Fee - <%= @student.package.type %> Package %></th>
 				<th>
 					(
-					<%= @student.class_catalog.date_end %>, 
 					<%= @student.class_catalog.date_start %> - 
+					<%= @student.class_catalog.date_end %>, 
 					<%= @student.class_catalog.class_catalog_id %>,
 					<%= @student.class_catalog.venue_address %>, 
 					<%= @student.class_catalog.time_start%> -

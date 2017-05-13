@@ -2,7 +2,7 @@
   <%= f.input :name %>
   <%= f.input :email_ad %>
   <%= f.input :high_school %>
-  <%= f.input :birthdate %>
+  <%= f.input :birthdate, start_year: Date.today.year - 110, end_year: Date.today.year %>
   <%= f.input :contact_number %>
   <%= f.input :father_name %>
   <%= f.input :mother_name %>

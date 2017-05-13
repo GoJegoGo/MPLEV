@@ -44,9 +44,9 @@
                             <label class ="btn btn-primary active">
                               <input type="checkbox" checked autocomplete="off">
                             </label>
-                          </div>
-                    </form>
-                </div>
+</div>
+</form>
+</div>
 </div>
 </div>
 </div>
@@ -73,22 +73,34 @@
 
         <table width="70%", align="left">
             <tr>
+              <th>Class ID</th>
               <th>Venue Address</th>
               <th>Time Start</th>
               <th>Time End</th>
-              <th>Date Start</th>
-              <th>Date End</th>
-            </tr>
-              <% @class_catalogs.each do |a| %>
-                  <tr>
-                    <td><%= a.venue_address %></td>
-                    <td><%= a.time_start %></td>
-                    <td><%= a.time_end %></td>
-                    <td><%= a.date_start %></td>
-                    <td><%= a.date_end %></td>
-                  </tr>
-                <% end %>                           
-          </table>
+              <th>Date Inclusive</th>
+              </tr>
+              <tr>
+                <th>0001</th>
+                <th>Golden Crescent Mansion</th>
+                <th>1:00 PM
+                <th>5:00 PM</th>
+                <th>April 3 - April 23</th>
+              </th>
+               <tr>
+                <th>0002</th>
+                <th>ISO Room 5&6</th>
+                <th>8:00 AM</th>
+                <th>12:00 NN</th>
+                <th>April 5 - April 25</th>
+              </th> 
+               <tr>
+                <th>0003</th>
+                <th>Leong Hall Auditorium</th>
+                <th>1:00 PM</th>
+                <th>5:00 PM</th>
+                <th>April 27- May 27</th>
+              </th>                             
+              </table>
     </div>
       </div>
       </div>
@@ -114,6 +126,7 @@
             <th>Name</th>
             <th>Package Type</th>
             <th>Initial Price</th>
+            <th>Actions</th>
         </tr>
         
             <% @packages.each do |a| %>
@@ -121,6 +134,11 @@
                 <td><%= a.package_type %></td>
                 <td><%= a.name %></td>
                 <td><%= a.initial_price %></td>
+                <td>
+                    <%= link_to "Show", package_path(a.id) %>
+                    <%= link_to "Edit", edit_package_path(a.id) %>
+                    <%= link_to "Delete", package_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
         </tr>
             <% end %>
         
@@ -146,12 +164,12 @@
 
       <table width="70%", align="left">
         <tr>
-          <th>Algebra</th>
-          <th>Geometry</th>
-          <th>Trigonometry</th>
-          <th>Biology</th>
+        <th>Algebra</th>
+        <th>Geometry</th>
+        <th>Trigonometry</th>
+        <th>Biology</th>
         </tr>
-      </table>
+        </table>
 
         </div>
         </div>

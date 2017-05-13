@@ -4,10 +4,10 @@
 
 <h2>Shortcuts</h2>
     <ul>
-        <li><%= link_to "Classes", admin_class_catalogs_path %> - <%= link_to "Add Classes", new_admin_class_catalog_path%></li>
-        <li><%= link_to "Packages", admin_packages_path %> - <%= link_to "Add Packages", new_admin_package_path%></li>
-        <li><%= link_to "Students", admin_students_path %>- <%= link_to "New Assessment", new_admin_student_path%></li>
-        <li><%= link_to "Periods", admin_periods_path %>- <%= link_to "New Period", new_admin_period_path %></li>
+        <li><%= link_to "Classes", class_catalogs_path %> - <%= link_to "Add Classes", new_class_catalog_path%></li>
+        <li><%= link_to "Packages", packages_path %> - <%= link_to "Add Packages", new_package_path%></li>
+        <li><%= link_to "Students", students_path %>- <%= link_to "New Assessment", new_student_path%></li>
+        <li><%= link_to "Periods", periods_path %>- <%= link_to "New Period", new_period_path %></li>
         <li><%= link_to "Start Page", root_path %>
     </ul>
 
@@ -34,9 +34,9 @@
                 <td><%= a.date_end %></td>
                 <td><%= a.subject_list %></td>
                 <td>
-                    <%= link_to "Show", admin_class_catalog_path(a.id) %>
-                    <%= link_to "Edit", edit_admin_class_catalog_path(a.id) %>
-                    <%= link_to "Delete", admin_class_catalog_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <%= link_to "Show", class_catalog_path(a.id) %>
+                    <%= link_to "Edit", edit_class_catalog_path(a.id) %>
+                    <%= link_to "Delete", class_catalog_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                 </td>
         </tr>
             <% end %>
@@ -64,9 +64,9 @@
                 <td><%= a.name %></td>
                 <td><%= a.initial_price %></td>
                 <td>
-                    <%= link_to "Show", admin_package_path(a.id) %>
-                    <%= link_to "Edit", edit_admin_package_path(a.id) %>
-                    <%= link_to "Delete", admin_package_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <%= link_to "Show", package_path(a.id) %>
+                    <%= link_to "Edit", edit_package_path(a.id) %>
+                    <%= link_to "Delete", package_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                 </td>
         </tr>
             <% end %>
@@ -92,10 +92,10 @@
         <% @students.each do |a| %>
             <td><%= a.name %></td>
             <td>
-                <%= link_to "Show", admin_student_path(a.id) %>
-                <%= link_to "Edit", edit_admin_student_path(a.id) %>
-                <%= link_to "Delete", admin_student_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <%= link_to "Add Payment", new_admin_student_payment_path(a.id) %>
+                <%= link_to "Show", student_path(a.id) %>
+                <%= link_to "Edit", edit_student_path(a.id) %>
+                <%= link_to "Delete", student_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to "Add Payment", new_student_payment_path(a.id) %>
             </td>
         <% end %>
     </tr>

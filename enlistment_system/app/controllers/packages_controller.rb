@@ -44,6 +44,6 @@ class PackagesController < ApplicationController
     end
 
     def package_params
-        params_require(:package).permit!
+        params.require(:package).permit!
     end
 end
