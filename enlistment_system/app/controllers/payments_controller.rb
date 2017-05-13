@@ -15,7 +15,7 @@ class PaymentsController < ApplicationController
   # GET /payments/new
   def new
     @payment = Payment.new
-    @payment.assessment = Student.find(params[:student_id])
+    @payment.assessment = Student.find(params[:student_id]).assessment
   end
 
   # GET /payments/1/edit
@@ -26,6 +26,7 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     @payment = Payment.new(payment_params)
+    # @payment.assessment = Student.find(params[:student_id])
 
     respond_to do |format|
       if @payment.save
@@ -70,6 +71,6 @@ class PaymentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def payment_params
-      params.require(:payment).permit(:number_of_installment, :has_paid, :discount_rate, :final_amount)
+      params.require(:payment).permit!
     end
 end

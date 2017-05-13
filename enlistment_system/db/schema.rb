@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511105854) do
+ActiveRecord::Schema.define(version: 20170513035130) do
 
   create_table "assessments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "assessment_id"
@@ -34,19 +34,10 @@ ActiveRecord::Schema.define(version: 20170511105854) do
     t.string   "subject_list"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.date     "date_start"
-    t.date     "date_end"
     t.integer  "max_slots"
     t.integer  "slots_taken"
-  end
-
-  create_table "class_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "class_id"
-    t.integer  "student_id"
-    t.integer  "period_id"
-    t.string   "professor_note"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.date     "date_start"
+    t.date     "date_end"
   end
 
   create_table "packages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -79,11 +70,9 @@ ActiveRecord::Schema.define(version: 20170511105854) do
     t.string   "contact_number"
     t.string   "father_name"
     t.string   "mother_name"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.date     "birthdate"
-    t.integer  "package_id"
-    t.integer  "class_catalog_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

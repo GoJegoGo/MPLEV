@@ -34,47 +34,14 @@ module Admin
       @period = Period.new(period_params)
       respond_to do |format|
         if @period.save
-          format.html { redirect_to @period, notice: 'Period was successfully created.' }
+          format.html { redirect_to admin_period_path(@period.id), notice: 'Period was successfully created.' }
           format.json { render :show, status: :created, location: @period }
-          redirect_to admin_period_path(@period.id)
         else
           format.html { render :new }
           format.json { render json: @period.errors, status: :unprocessable_entity }
           render "admin/periods/new.html.erb"
         end
       end
-    end
-
-    # PATCH/PUT /periods/1
-    # PATCH/PUT /periods/1.json
-    def update
-      @period = Period.all
-      respond_to do |format|
-        if @period.update(period_params)
-          format.html { redirect_to @period, notice: 'Period was successfully updated.' }
-          format.json { render :show, status: :ok, location: @period }
-          redirect_to admin_period_path(@student.id)
-        else
-          format.html { render :edit }
-          format.json { render json: @period.errors, status: :unprocessable_entity }
-          render "admin/periods/edit.html.erb"
-        end
-      end
-    end
-
-    # DELETE /periods/1
-    # DELETE /periods/1.json
-    def destroy
-      @student = Student.find(params[:id])
-      @period.destroy!
-      redirect_to admin_periods_path
-      respond_to do |format|
-        format.html { redirect_to periods_url, notice: 'Period was successfully destroyed.' }
-        format.json { head :no_content }
-    end
-
-    def period_params
-      params.require(:period).permit!
     end
 
     private
@@ -85,8 +52,9 @@ module Admin
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def period_params
-        params.fetch(:period, {})
+        params.require(:period).permit!
+        # params.fetch(:period, {})
       end
-    end
+
   end
 end

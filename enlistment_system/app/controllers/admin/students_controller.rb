@@ -12,6 +12,7 @@ class StudentsController < ApplicationController
 
     def new
         @student = Student.new
+        student.build_assessment
         render "admin/students/new.html.erb"
     end
 
@@ -44,8 +45,9 @@ class StudentsController < ApplicationController
         redirect_to admin_students_path
     end
 
-    def student_params
-        params.require(:student).permit!
+    private
+        def student_params
+            params.require(:student).permit!
+        end
     end
-end
 end

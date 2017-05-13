@@ -1,24 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number of installment:</strong>
-  <%= @payment.number_of_installment %>
+  <strong>Assessment_ID</strong>
+  <%= @payment.assessment_id %>
 </p>
 
 <p>
-  <strong>Has paid:</strong>
-  <%= @payment.has_paid %>
+  <strong>Amount Paid</strong>
+  <%= @payment.amount_paid %>
 </p>
 
 <p>
-  <strong>Discount rate:</strong>
-  <%= @payment.discount_rate %>
+  <strong>Created At</strong>
+  <%= @payment.created_at %>
 </p>
 
-<p>
-  <strong>Final amount:</strong>
-  <%= @payment.final_amount %>
-</p>
-
-<%= link_to 'Edit', edit_payment_path(@payment) %> |
-<%= link_to 'Back', payments_path %>
+<%= link_to 'Edit', edit_student_payment_path(@payment,student, @payment) %> |
+<%= link_to 'Back', studentpayments_path(@payment.student) %>

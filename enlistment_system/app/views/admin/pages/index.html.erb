@@ -6,7 +6,7 @@
     <ul>
         <li><%= link_to "Classes", admin_class_catalogs_path %> - <%= link_to "Add Classes", new_admin_class_catalog_path%></li>
         <li><%= link_to "Packages", admin_packages_path %> - <%= link_to "Add Packages", new_admin_package_path%></li>
-        <li><%= link_to "Students", admin_students_path %>- <%= link_to "New Assessment", new_admin_assessment_path%></li>
+        <li><%= link_to "Students", admin_students_path %>- <%= link_to "New Assessment", new_admin_student_path%></li>
         <li><%= link_to "Periods", admin_periods_path %>- <%= link_to "New Period", new_admin_period_path %></li>
         <li><%= link_to "Start Page", root_path %>
     </ul>
@@ -95,7 +95,7 @@
                 <%= link_to "Show", admin_student_path(a.id) %>
                 <%= link_to "Edit", edit_admin_student_path(a.id) %>
                 <%= link_to "Delete", admin_student_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <%= link_to "Add Payment", new_student_payment_path(a.id) %>
+                <%= link_to "Add Payment", new_admin_student_payment_path(a.id) %>
             </td>
         <% end %>
     </tr>
