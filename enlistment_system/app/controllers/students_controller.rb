@@ -22,8 +22,11 @@ class StudentsController < ApplicationController
         @student.assessment.has_paid = FALSE
         @student.assessment.period = Period.first
         if @student.save
+            # if user_signed_in
+            # redirect_to authenticated_root_path
             redirect_to student_path(@student.id)
         else
+            # redirect_to unauthenticated_root_path
             render "students/new.html.erb"
         end  
     end 
