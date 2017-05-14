@@ -1,18 +1,18 @@
-<h1><%= @class_catalog.venue_address %></h1>
+<h2 style="text-align: center;"><%= @class_catalog.venue_address %></h2>
 <br>
-<ul>
-	<li>Max Slots: <%= @class_catalog.max_slots %></li> 
-	<li>Date Start: <%= @class_catalog.date_start %></li>
-	<li>Date End: <%= @class_catalog.date_end %></li>
-	<li>Time Start: <%= @class_catalog.time_start %></li>
-	<li>Time End: <%= @class_catalog.time_end %></li>
+<ul style="text-align: center;font-family: Helvetica Neue, Helvetica, Arial; font-size: 20px; border: 5px solid black; width: 500px; position: absolute;left: 420px;">
+	<br>Max Slots: <%= @class_catalog.max_slots %><br><br><br>
+	Date Start: <%= @class_catalog.date_start %><br><br><br>
+	Date End: <%= @class_catalog.date_end %><br><br><br>
+	Time Start: <%= @class_catalog.time_start %><br><br><br>
+	Time End: <%= @class_catalog.time_end %><br><br><br>
 </ul>
 
-<p><strong>List of Students</strong></p>
+<p style="position: absolute; top: 50px"><strong><b>List of Students:</b></strong></p>	
 <ol>
 	<% @class_catalog.students.each do |c| %>
 		<li><%= c.name %></li>
 	<% end %>
 </ol>
 <hr>
-<%= link_to "Back to List", class_catalogs_path %>
+<button class="btn btn-danger" style="position: absolute;  bottom: 180px; right: 610px; color: #ffffff;"><%= link_to "Back to List", class_catalogs_path %></button>

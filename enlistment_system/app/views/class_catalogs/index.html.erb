@@ -1,11 +1,11 @@
-<h1>List of Classes Offered</h1>
+<h1 style="font-family: Helvetica Neue, Helvetica, Arial; text-align: center; background-color: #0374b5; margin: 0px; padding: 0px; color: #ffffff;border-style: solid; border-width: 1px; border-color: #0374b5;"><b>LIST OF CLASSES OFFERED</b></h1>
 
-<h2>Shortcuts</h2>
+<h2 style="font-family: Helvetica Neue, Helvetica, Arial;  text-align: center; background-color: #4f4f4f; margin: 0px; padding: 0px; color: #ffffff;">Shortcuts</h2>
     <ul>
-        <li><%= link_to "Add Classes", new_class_catalog_path %></li>
-        <li><%= link_to "Students", students_path %></li>
-        <li><%= link_to "Packages", packages_path %></li>
-        <li><%= link_to "Dashboard", root_path %></li>
+         <li><h4><%= link_to "Add Classes", new_class_catalog_path %></h4></li>
+         <li><h4><%= link_to "Students", students_path %></li></h4>
+         <li><h4><%= link_to "Packages", packages_path %></li></h4>
+        <li><h4><%= link_to "Dashboard", root_path %></li></h4>
     </ul>
 
 <table width="150%", align="left">
@@ -32,9 +32,9 @@
                 <td><%= a.date_end %></td>
                 <td><%= a.subject_list %></td>
                 <td>
-                    <%= button_to "Show", class_catalog_path(a.id), :method => "get" %>
-                    <%= button_to "Edit", edit_class_catalog_path(a.id), :method => "get" %>
-                    <%= link_to "Delete", class_catalog_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                     <button class="btn btn-success"><%= link_to "Show", class_catalog_path(a.id) %>
+                     <button class="btn btn-warning"><%= link_to "Edit", edit_class_catalog_path(a.id)%>
+                     <button class="btn btn-danger"><%= link_to "Delete", class_catalog_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                 </td>
         </tr>
        

@@ -1,11 +1,11 @@
-<h1>List of Packages </h1>
+<h1 style="font-family: Helvetica Neue, Helvetica, Arial; text-align: center; background-color: #0374b5; margin: 0px; padding: 0px; color: #ffffff;border-style: solid; border-width: 1px; border-color: #0374b5;"><b><h1>LIST OF PACKAGES </h1></b>
 
-<h2>Shortcuts</h2>
+<h2 style="font-family: Helvetica Neue, Helvetica, Arial;  text-align: center; background-color: #4f4f4f; margin: 0px; padding: 0px; color: #ffffff;">Shortcuts</h2>
     <ul>
-        <li><%= link_to "Add Packages", new_package_path %></li>
-        <li><%= link_to "Students", students_path %></li>
-        <li><%= link_to "Classes", class_catalogs_path %></li>
-        <li><%= link_to "Dashboard", root_path %></li>
+        <li><h4><%= link_to "Add Packages", new_package_path %></h4></li>
+        <li><h4><%= link_to "Students", students_path %></h4></li>
+        <li><h4><%= link_to "Classes", class_catalogs_path %></h4></li>
+        <li><h4><%= link_to "Dashboard", root_path %></h4></li>
     </ul>
     
     <table width="100%", align="left">
@@ -22,9 +22,9 @@
                 <td><%= a.name %></td>
                 <td><%= a.initial_price %></td>
                 <td>
-                    <%= link_to "Show", package_path(a.id) %>
-                    <%= link_to "Edit", edit_package_path(a.id) %>
-                    <%= link_to "Delete", package_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <button class="btn btn-success"><%= link_to "Show", package_path(a.id) %>
+                    <button class="btn btn-warning"><%= link_to "Edit", edit_package_path(a.id) %>
+                    <button class="btn btn-danger"><%= link_to "Delete", package_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
                 </td>
         </tr>
             <% end %>

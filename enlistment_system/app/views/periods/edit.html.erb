@@ -1,6 +1,9 @@
-<h1>Editing Period</h1>
+<body style="background-color: #e8e8e8;">
+<h1 style="background-color: #0374b5; color: #ffffff; margin: 0px; padding: 0px; text-align: center;"><b>Editing Period</b></h1>
 
-<%= render 'form', period: @period %>
+<br><br><div style="text-align:center; font-family: Helvetica Neue, Helvetica, Arial; font-size: 20px; border: 5px solid #0374b5; width: 500px;height: 120px; position: absolute;left: 420px; top: 150px;padding-top: 10px;"><%= render 'form', period: @period %></div>
 
-<%= link_to 'Show', period_path(:period_id) %> |
-<%= link_to 'Back', periods_path %>
+<button class="btn btn-default" style="position: absolute;  bottom: 300px; right: 600px; color: #ffffff;"><%= link_to 'Show', period_path(:period_id) %> </button>
+<button class="btn btn-default" style="position: absolute;  bottom: 300px; right: 700px; color: #ffffff;"><%= link_to 'Back', periods_path %></button>
+
+</body>

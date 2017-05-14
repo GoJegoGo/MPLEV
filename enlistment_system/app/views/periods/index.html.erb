@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Periods</h1>
+<h2 style="text-align: center;">Periods</h1>
 
 <table>
   <thead>
@@ -19,9 +19,9 @@
         <%= period.period_end %>
       </tr>
       <tr>
-        <td><%= link_to 'Show', period_path(period) %></td>
-        <td><%= link_to 'Edit', edit_period_path(period) %></td>
-        <td><%= link_to 'Destroy', period_path(period), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button class="btn btn-success"><%= link_to 'Show', period_path(period) %></td></button>
+        <td><button class="btn btn-warning"><%= link_to 'Edit', edit_period_path(period) %></td></button>
+        <td><button class="btn btn-danger"><%= link_to 'Destroy', period_path(period), method: :delete, data: { confirm: 'Are you sure?' } %></td></button>
       </tr>
     <% end %>
   </tbody>

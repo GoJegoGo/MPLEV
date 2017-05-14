@@ -1,64 +1,8 @@
-<h1 style="text-align:center"> MentorsPlus </h1>
-
-<a href="#enlist" data-toggle="modal">Begin Enlistment</a>
-
-  
-            <div class="modal fade" id ="enlist" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <form class="form-horizontal">
-                        <div class="modal-header">
-                            <h4></h4>
-                        </div>
-                        <div class="modal-body">
-                          <form>
-                            <div class="checkbox">
-                            <h2>Choos a class</h2>
-                              <label>
-                                <input type="checkbox" value="option1" />
-                                April 3 - April 23; Golden Crescent Mansion; 1:00 PM - 5:00 PM
-                              </label>
-                              <label>
-                                <input type="checkbox" value="option2" />
-                                April 5 - April 23; ISO Room 5&6; 8:00 AM - 5:00 NN
-                              </label>
-                              <label>
-                                <input type="checkbox" value="option3" />
-                                April 27 - May 7; Leong Hall Auditorium; 1:00 PM - 5:00 PM
-                              </label>
-                            <h2>Fill-Up Student Information</h2>
-                            <div class="form-group">
-                              <label for="inputName">Full Name</label>
-                              <input class="form-control" type="text" id="inputName" placeholder="Jego Reyes" />
-                            </div>
-                            <div class="form-group">
-                               <label for="inputBirth">Date of Birth</label>
-                               <input class="form-control" type="date" id="inputBirth"/>
-                            </div>
-                            <div class="form-group">
-                               <label for="inputEmail">Email Address</label>
-                               <input class="form-control" type="email" id="inputEmail" placeholder="1@gmail.com" />
-                            </div>
-                          </form>
-                          <div class = "btn-group" data-toggle="buttons">
-                            <label class ="btn btn-primary active">
-                              <input type="checkbox" checked autocomplete="off">
-                            </label>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-</form>
-</div>
-</div>
-</div>
 
 
+<h1 style="font-family: Helvetica Neue, Helvetica, Arial; text-align: center; background-color: #0374b5; margin: 0px; padding: 0px; color: #ffffff;border-style: solid; border-width: 1px; border-color: #0374b5;"><b>Student Enlistment</h1>
 
+<br><br><br><br><br><br>
 <div class = "container">
   <div class = "panel-group" id = "accordion" aria-multiselectable="true">
   <div class = "panel panel-default">
@@ -78,28 +22,7 @@
               <th>Time Start</th>
               <th>Time End</th>
               <th>Date Inclusive</th>
-              </tr>
-              <tr>
-                <th>0001</th>
-                <th>Golden Crescent Mansion</th>
-                <th>1:00 PM
-                <th>5:00 PM</th>
-                <th>April 3 - April 23</th>
-              </th>
-               <tr>
-                <th>0002</th>
-                <th>ISO Room 5&6</th>
-                <th>8:00 AM</th>
-                <th>12:00 NN</th>
-                <th>April 5 - April 25</th>
-              </th> 
-               <tr>
-                <th>0003</th>
-                <th>Leong Hall Auditorium</th>
-                <th>1:00 PM</th>
-                <th>5:00 PM</th>
-                <th>April 27- May 27</th>
-              </th>                             
+              </tr>        
               </table>
     </div>
       </div>
@@ -126,20 +49,11 @@
             <th>Name</th>
             <th>Package Type</th>
             <th>Initial Price</th>
-            <th>Actions</th>
+        
         </tr>
         
             <% @packages.each do |a| %>
-        <tr>
-                <td><%= a.package_type %></td>
-                <td><%= a.name %></td>
-                <td><%= a.initial_price %></td>
-                <td>
-                    <%= link_to "Show", package_path(a.id) %>
-                    <%= link_to "Edit", edit_package_path(a.id) %>
-                    <%= link_to "Delete", package_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-                </td>
-        </tr>
+       
             <% end %>
         
     </table>
@@ -162,7 +76,7 @@
   <div id ="collapsethree" class="panel-collapse collapse">
     <div class = "panel-body">
 
-      <table width="70%", align="left">
+      <table width="70%", align="right">
         <tr>
         <th>Algebra</th>
         <th>Geometry</th>
@@ -171,13 +85,51 @@
         </tr>
         </table>
 
+        <table width="70%", align="center">
+        <tr>
+        <th>Chemistry</th>
+        <th>Physics</th>
+        <th></th>
+        <th></th>
+        <th>Earth Science</th>
+        <th>Vocabulary</th>
+        </tr>
+        </table>
+
+        <table width="70%", align="right">
+        <tr>
+        <th></th>
+        <th></th>
+        <th>Grammar</th>
+        <th>Reading Comprehension</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>Filipino</th>
+        <th></th>
+        <th></th>
+        <th>Abstract and Logical Reasoning</th>
+        </tr>
+        </table>
+
+
+        </div>
         </div>
         </div>
         </div>
         </div>
         </div>
 
+</body>
 
 
-<h7><%= link_to("Start Enlistment", new_student_path) %></h7>
+
+<button class="btn btn-default" style="position: absolute;  top: 100px; right: 500px; color: #ffffff;"><%= link_to("Start Enlistment", new_student_path) %></h7></button>
+
+<button class="btn btn-default" style="position: absolute;  top: 100px; right: 700px; color: #ffffff;"><%= link_to("Back To Home", root_path) %></h7></button>
+
+
+
 

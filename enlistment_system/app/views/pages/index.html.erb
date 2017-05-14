@@ -1,20 +1,55 @@
-<h1>Admin Dashboard</h1>
 
-<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="sidebar">
 
-<h2>Shortcuts</h2>
-    <ul>
-        <li><%= link_to "Classes", class_catalogs_path %> - <%= link_to "Add Classes", new_class_catalog_path%></li>
-        <li><%= link_to "Packages", packages_path %> - <%= link_to "Add Packages", new_package_path%></li>
-        <li><%= link_to "Students", students_path %>- <%= link_to "New Assessment", new_student_path%></li>
-        <li><%= link_to "Periods", periods_path %>- <%= link_to "New Period", new_period_path %></li>
-        <li><%= link_to "Start Page", root_path %>
+    <h1 style="color:#ffffff;text-align: center; background-color: #4f4f4f; margin:0; padding:0 ; font-family: Helvetica Neue, Helvetica, Arial; "><b>Welcome Admin!</b></h1>
+
+<body>
+ <div id="sidebar" class="visible">
+    <ul>    
+    <br>
+            
+            <h4 style="color: #ffffff; text-align: center;"><b>Dashboard</b></h4><span class="glyphicon glyphicon-user" style="color: #ffffff; font-size: 20px; position: absolute; top: 25px; left: 5px;"></span>
+            <br><li><%= link_to "Classes", class_catalogs_path %> </button></li>
+            <li><%= link_to "Add Classes", new_class_catalog_path%></button></li>
+            <li><%= link_to "Packages", packages_path %></button></li>
+            <li><%= link_to "Add Packages", new_package_path%></button></li>
+            <li><%= link_to "Students", students_path %></button></li>
+            <li><%= link_to "New Assessment", new_student_path%></button></li>
+            <li><%= link_to "Periods", periods_path %></button></li>
+            <li><%= link_to "New Period", new_period_path %></button></li>
+            <li><%= link_to "Start Page", root_path %></button></li>
     </ul>
 
-<h3> List of Classes Offered </h3>
+    <div id="sidebar-btn">
+          <span class="glyphicon glyphicon-menu-hamburger">
+    </div>
+
+    </div>
+
     
-<br>
-<table width="150%", align="left">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+
+    $(document).ready(function(){
+        $('#sidebar-btn').click(function(){
+            $('#sidebar').toggleClass('visible');
+        });
+    });
+
+    </script>
+
+
+    
+   
+
+<div id="tablelist1">
+
+<h3 style="text-align: center; font-family: Helvetica Neue, Helvetica, Arial;"> List of Classes Offered </h3>
+    
+
+<table width="50%", align="center">
         <tr>
             <th>Venue Address</th>
             <th>Time Start</th>
@@ -34,9 +69,9 @@
                 <td><%= a.date_end %></td>
                 <td><%= a.subject_list %></td>
                 <td>
-                    <%= link_to "Show", class_catalog_path(a.id) %>
-                    <%= link_to "Edit", edit_class_catalog_path(a.id) %>
-                    <%= link_to "Delete", class_catalog_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <button class="btn btn-success"><%= link_to "Show", class_catalog_path(a.id) %></button>
+                    <button class="btn btn-warning"><%= link_to "Edit", edit_class_catalog_path(a.id) %></button>
+                    <button class="btn btn-danger"><%= link_to "Delete", class_catalog_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %></button>
                 </td>
         </tr>
             <% end %>
@@ -44,62 +79,100 @@
        
 </table>
 
-<br><br><br><br>
 
-<h3> List of Packages Offered </h3>
-    
-<br>
+<h3 style="text-align: center; font-family: Helvetica Neue, Helvetica, Arial;padding-top: 10px"> List of Packages Offered </h3>
 
-    <table width="100%", align="left">
+    <table width="50%", align="right">
         <tr>
-            <th>Name</th>
             <th>Package Type</th>
+            <th></th>
+            <th></th>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
             <th>Initial Price</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
             <th>Actions</th>
+            <th></th>
+            <th></th>
         </tr>
         
             <% @packages.each do |a| %>
         <tr>
                 <td><%= a.package_type %></td>
+                <td></td>
+                <td></td>
                 <td><%= a.name %></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td><%= a.initial_price %></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>
-                    <%= link_to "Show", package_path(a.id) %>
-                    <%= link_to "Edit", edit_package_path(a.id) %>
-                    <%= link_to "Delete", package_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <button class="btn btn-success"><%= link_to "Show", package_path(a.id) %></button>
+                    <button class="btn btn-warning"><%= link_to "Edit", edit_package_path(a.id) %></button>
+                    <button class="btn btn-danger"><%= link_to "Delete", package_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %></button>
                 </td>
+        
         </tr>
             <% end %>
         
     </table>
 
-<br>
-<br>
-<br>
-<br>
+<div id="tablelist2"> 
+
+
+<h3 style="text-align: center; font-family: Helvetica Neue, Helvetica, Arial;"> List of Students </h3>
     
 
-<h3> List of Students </h3>
-    
-<br>
-
-<table width="200%", align="left">
+<table width="50%", align="right">
     <tr>
         <th>Name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
         <th>Actions</th>
     </tr>
     <tr>
         <% @students.each do |a| %>
             <td><%= a.name %></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td>
-                <%= link_to "Show", student_path(a.id) %>
-                <%= link_to "Edit", edit_student_path(a.id) %>
-                <%= link_to "Delete", student_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <%= link_to "Add Payment", new_student_payment_path(a.id) %>
+                <button class="btn btn-success"><%= link_to "Show", student_path(a.id) %></button>
+                <button class="btn btn-warning"><%= link_to "Edit", edit_student_path(a.id) %></button>
+                <button class="btn btn-danger"><%= link_to "Delete", student_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                <button class="btn btn-info"><%= link_to "Add Payment", new_student_payment_path(a.id) %></button>
             </td>
         <% end %>
     </tr>
 </table>
 
-<br>
-<br>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../vendor/assets/javascript/bootstrap.min.js"></script>
+  </div>
+
+</body>
+            
+ <div style="position: absolute; top: 5px; right: 15px; color: #ffffff; font-size: 20px"><%= link_to "Sign-out", destroy_user_session_path, method: :delete %></div>
+   
+

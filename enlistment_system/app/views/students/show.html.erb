@@ -1,11 +1,24 @@
-<h4><center>MentorsPlus</center></h4>
-<h4><center>Katipunan</center></h4>
-<h4><center>Assessment Form</center></h4>
-<h4><center>Assessed On: <%= @student.assessment.created_at %></center></h4>
+<!DOCTYPE html>
 
-<br><br>
+<html>
 
-	<table width="100%", align="left">
+<head>
+
+
+<h4 style="text-align: center; color: #3d3d3d;">MentorsPlus</h4>
+<h4 style="text-align: center; color: #3d3d3d;">Katipunan</h4>
+<h4 style="text-align: center; color: #3d3d3d;">Assessment Form</h4>
+<h4 style="text-align: center; color: #3d3d3d;">Assessed On: <%= @student.assessment.created_at %></h4>
+
+</head>
+
+<hr style="width: 1000px; height: 1px; color:#333;background-color:#333;"/>
+<body>
+
+
+
+
+<table width="60%", align="center" style="background-color: #ffffff; width: 70%;">
 				<tr>
 					<th>ID No.</th>
 					<th>Student's Name</th>
@@ -14,25 +27,27 @@
 					<th>High School</th>
 				</tr>
 				<tr>
-					<th><%= @student.id %></th>
-					<th><%= @student.name %></th>
-					<th><%= @student.assessment.class_catalog.id %></th>
-					<th><%= @student.assessment.package.package_type %></th>
-					<th><%= @student.high_school %></th>
+					<td style="color: #3d3d3d; padding-left: 10px;"><%= @student.id %></td>
+					<td style="color: #3d3d3d; padding-left: 10px;"><%= @student.name %></td>
+					<td style="color: #3d3d3d; padding-left: 10px;"><%= @student.assessment.class_catalog.id %></td>
+					<td style="color: #3d3d3d; padding-left: 10px;"><%= @student.assessment.package.package_type %></td>
+					<td style="color: #3d3d3d; padding-left: 10px;"><%= @student.high_school %></td>
 				<tr>
 				
-	</table>
 
-
-
-	<table width="100%", align="center">
-            <tr>
+             <tr>
               <th>Fees</th>
+              <th></th>
+              <th></th>
               <th>Payment</th>
+              <th></th>
             </tr>
-			<tr>
-				<th>MentorsPlus Fee - <%= @student.assessment.package.package_type %> Package </th>
-				<th>
+
+
+            <tr>
+            	<td></td>
+				<td style="color: #3d3d3d;">MentorsPlus Fee - <%= @student.assessment.package.package_type %> Package </td>
+				<td>
 					(
 					<%= @student.assessment.class_catalog.date_start %> - 
 					<%= @student.assessment.class_catalog.date_end %>, 
@@ -41,25 +56,69 @@
 					<%= @student.assessment.class_catalog.time_start%> -
 					<%= @student.assessment.class_catalog.time_end %>
 					)
-				</th>
-				<th><%= @student.assessment.package.initial_price %></th>
+				</td>
+				<td><%= @student.assessment.package.initial_price %></td>
+				<td></td>
 			</tr>
-	</table>
 
-	<table width="100%", align="center">	
 			<tr>
 				<th>Discount</th>
-				<th>
-					<%= @student.assessment.discount_rate %> as of <%= @student.assessment.created_at %>
+				<th>	
 				</th>
+				<th></th>
+              	<th></th>
+              	<th></th>
 			</tr>
-	</table>
-	<hr>
-	<table width="100%", align="center">
+
+			<tr>
+              <td></td>
+              <td style="color: #3d3d3d; padding-left: 35px;">Early-Bird Discount (10% as of Nov. 29)
+              	<%= @student.assessment.discount_rate %> as of <%= @student.assessment.created_at %>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            
 			<tr>
 				<th><b>TOTAL</b></th>
+				<th></th>
+				<th></th>
 				<th><%= @student.assessment.final_amount %></th>
+				<th></th>
+				
 			</tr>
-	</table>
 			
-<%= link_to "Back to Home", root_path, class: "btn btn-primary" %>
+
+	</table>
+	<br>
+
+
+              <h4 style="position: absolute; left: 610px;"><b>IMPORTANT:</b></h4>
+     
+	 <p style="position: absolute; top: 480px; left: 320px;">
+              1. This is not a receipt 
+              2. Payment should be made over-the-counter in MentorsPlus Katipunan. <br>
+              3. Students must pay within 3 days of the date of Assessment or this document will be declared
+              <br>null and void. <br>
+              4. Change in Sections is a management prerogative and is subject to availability of slots. Each <br>change is subject to an administrative fee of <b>five hundred pesos (PHP 500).</b><br>
+              5. Change of Review Package: If the student wants to upgrade/downgrade his review plan, he <br> will need to request the upgrade in the center and pay the difference of the plan he is <br> upgrading to from the previous plan. Option to upgrade is only allowed until the last day of <br>the last summer review class.<br>
+              6. In case of a request for refund due to cancellation or downgrading of enrollment, the<br>refundable fee shall be based on the followng schemes:<br>
+              <br><br><br><br><br><br><br>7. Classes shall be conducted at a designated venue, the choice of which will depend on the <br> availability and seating capacity. Management reserves the right to change a venue in cases<br>where designated venue becomes unavailable.
+              <p style="position: absolute; top: 690px; left: 320px; padding-left: 30px;">a. For at least the first 30 days before the first day of review classes, the refund is 100% <br>minus 15% (administration fee) of the program's published rate. <br>
+              b. Within 15 to 29 days before the first day of review classes, the refund is 50% minus <br> 15% (administration fee) of the program's published rate. <br>
+              c. Within 0 to 14 days before the first days of review classes, there is<b> NO REFUND.</b><br> 
+              </p>
+             
+            </p>
+	</div>
+			
+<button class="btn btn-primary" style="margin-bottom:30px;position:absolute; left:600px; bottom:-300px;"> <%= link_to "Back to Home", root_path %>
+	
+</body>
+</html>
+
+
+
+	
