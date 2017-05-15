@@ -19,6 +19,7 @@
             <li><%= link_to "Periods", periods_path %></button></li>
             <li><%= link_to "New Period", new_period_path %></button></li>
             <li><%= link_to "Start Page", root_path %></button></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li></button></li>
     </ul>
 
     <div id="sidebar-btn">
@@ -139,6 +140,7 @@
     
 
 <table width="50%", align="right">
+    <% @students.each do |a| %>
     <tr>
         <th>Name</th>
         <th></th>
@@ -149,7 +151,7 @@
         <th>Actions</th>
     </tr>
     <tr>
-        <% @students.each do |a| %>
+        
             <td><%= a.name %></td>
             <td></td>
             <td></td>
@@ -162,8 +164,9 @@
                 <button class="btn btn-danger"><%= link_to "Delete", student_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %></button>
                 <button class="btn btn-info"><%= link_to "Add Payment", new_student_payment_path(a.id) %></button>
             </td>
-        <% end %>
+        
     </tr>
+    <% end %>
 </table>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -15,15 +15,33 @@
   <div id ="collapseone" class="panel-collapse collapse in">
     <div class = "panel-body">
 
-        <table width="70%", align="left">
-            <tr>
-              <th>Class ID</th>
-              <th>Venue Address</th>
-              <th>Time Start</th>
-              <th>Time End</th>
-              <th>Date Inclusive</th>
-              </tr>        
-              </table>
+       <table width="150%", align="left">
+        <tr>
+            <th>Venue Address</th>
+            <th>Max Slots</th>
+            <th>Slots Taken</th>
+            <th>Time Start</th>
+            <th>Time End</th>
+            <th>Date Start</th>
+            <th>Date End</th>
+            <th>Subject List</th>
+        </tr>
+        
+            <% @class_catalogs.each do |a| %>
+        <tr>
+                <td><%= a.venue_address %></td>
+                <td><%= a.max_slots %></td>
+                <td><%= a.slots_taken %></td>
+                <td><%= a.time_start %></td>
+                <td><%= a.time_end %></td>
+                <td><%= a.date_start %></td>
+                <td><%= a.date_end %></td>
+                <td><%= a.subject_list %></td>
+        </tr>
+       
+            <% end %>
+        
+</table>
     </div>
       </div>
       </div>
@@ -49,11 +67,14 @@
             <th>Name</th>
             <th>Package Type</th>
             <th>Initial Price</th>
-        
         </tr>
         
             <% @packages.each do |a| %>
-       
+        <tr>
+                <td><%= a.package_type %></td>
+                <td><%= a.name %></td>
+                <td><%= a.initial_price %></td>
+        </tr>
             <% end %>
         
     </table>
@@ -83,9 +104,9 @@
         <th>Trigonometry</th>
         <th>Biology</th>
         </tr>
-        </table>
+      </table>
 
-        <table width="70%", align="center">
+      <table width="70%", align="center">
         <tr>
         <th>Chemistry</th>
         <th>Physics</th>
@@ -94,9 +115,9 @@
         <th>Earth Science</th>
         <th>Vocabulary</th>
         </tr>
-        </table>
+      </table>
 
-        <table width="70%", align="right">
+      <table width="70%", align="right">
         <tr>
         <th></th>
         <th></th>
@@ -112,7 +133,7 @@
         <th></th>
         <th>Abstract and Logical Reasoning</th>
         </tr>
-        </table>
+      </table>
 
 
         </div>
